@@ -19,7 +19,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment Form</title>
+  <title>Payment Page</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -28,24 +28,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
-    .payment-form {
+    .payment-container {
       background: #fff;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       width: 350px;
     }
-    .payment-form h2 {
+    h2 {
       text-align: center;
       margin-bottom: 20px;
     }
-    .payment-form label {
+    label {
       display: block;
       margin-bottom: 5px;
       font-weight: bold;
     }
-    .payment-form input {
+    input {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -53,7 +54,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border: 1px solid #ccc;
       box-sizing: border-box;
     }
-    .payment-form button {
+    button {
       width: 100%;
       padding: 12px;
       background: #28a745;
@@ -63,7 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-radius: 5px;
       cursor: pointer;
     }
-    .payment-form button:hover {
+    button:hover {
       background: #218838;
     }
   </style>
@@ -74,29 +75,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <form class="payment-form" id="paymentForm">
+  <div class="payment-container">
     <h2>Payment Form</h2>
-    
-    <label for="name">Name</label>
-    <input type="text" id="name" placeholder="Your Name" required>
+    <!-- Form will submit to a static thank you page -->
+    <form action="thankyou.html" method="get">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" placeholder="you@example.com" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-    <label for="amount">Amount</label>
-    <input type="number" id="amount" placeholder="Enter amount" required>
+      <label for="amount">Amount</label>
+      <input type="number" id="amount" name="amount" placeholder="Enter Amount" required>
 
-    <button type="submit">Pay Now</button>
-  </form>
-
-  <script>
-    // For demo purposes: handle form submission
-    const form = document.getElementById('paymentForm');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      alert('Payment Successful!'); // Replace this with real payment logic later
-    });
-  </script>
+      <button type="submit">Pay Now</button>
+    </form>
+  </div>
 
 </body>
 </html>
